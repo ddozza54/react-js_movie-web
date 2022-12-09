@@ -14,12 +14,12 @@
 
 </body>
 <script>
-    const counterSpan = document.getElementById('counter')
+    const h3 = document.getElementById('counter')
     const button = document.getElementById("btn")
     let counter = 0;
     const handleClick = () => {
         counter += 1;
-        counterSpan.innerText = `Total Clicks : ${counter}`
+        h3.innerText = `Total Clicks : ${counter}`
     }
     button.addEventListener("click", handleClick)
 </script>
