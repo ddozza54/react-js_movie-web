@@ -17,11 +17,16 @@
 <script type='text/babel'>
     const root = document.getElementById("root");
     function App() {
-        const [counter, modifier] = React.useState(0);
-        return (<div>
-            <h3>Total clicks: {counter}</h3>
-            <button>Click Me</button>
-        </div>);
+        const [counter, setCounter] = React.useState(0);
+        const onClick = () => {
+            setCounter(counter + 1);
+        };
+        return (
+            <div>
+                <h3>Total clicks: {counter}</h3>
+                <button onClick={onClick}>Click Me</button>
+            </div>
+        );
     }
     ReactDOM.render(<App />, root);
 </script>
