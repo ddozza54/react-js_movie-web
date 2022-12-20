@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='colorBox'>
+        <span id='screen'>window.screen</span><br />
+        <span id='outer'>window.outer</span><br />
+        <span id='inner'>window.inner</span><br />
+        <span id='client'>documentElement.clientWidth</span>
+    </div>
+
+</body>
+<script>
+    const screen = document.getElementById("screen");
+    const outer = document.getElementById("outer");
+    const inner = document.getElementById("inner");
+    const client = document.getElementById("client");
+    const box = document.getElementById("colorBox");
+
+    box.style.backgroundColor = "#D2B7D3";
+    box.style.width = "300px";
+    box.style.height = "100px";
+    const handleResize = () => {
+        screen.innerText = `window.screen: ${window.screen.width},${window.screen.height}`;
+        outer.innerText = `window.outer: ${window.outerWidth},${window.outerHeight}`
+        inner.innerText = `window.inner: ${window.innerWidth},${window.innerHeight}`
+        client.innerText = `documentElement.clientWidth: ${document.documentElement.clientWidth},${document.documentElement.clientHeight}`
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+
+</script>
+
+</html>
