@@ -1,15 +1,19 @@
-import { useState } from "react";
-import Button from "./Button";
-import styles from "./App.module.css";
-
+import { useEffect, useState } from "react";
+function hifn() {
+  console.log("hi :-)");
+  return () => console.log("bye :( ");
+}
+function Hello() {
+  useEffect(hifn, []);
+  return <h1>Hello!</h1>;
+}
 function App() {
-  const [counter, setCounter] = useState(0);
-  const onClick = () => setCounter((prev) => prev + 1);
-  console.log("render");  
+  const [showing, setShowing] = useState(false);
+  const onClick = () => setShowing((prev) => !prev);
   return (
     <div>
-      <h1 className={styles.title}>{counter}</h1>
-      <Button onClick={onClick} text="Hello" />
+      {showing ? <Hello /> : null}
+      <button onClick={onClick}>{showing ? "Hide" : "Showing"}</button>
     </div>
   );
 }
